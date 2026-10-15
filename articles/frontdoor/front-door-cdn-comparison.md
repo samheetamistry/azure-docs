@@ -92,6 +92,14 @@ The following table lists services that are on retirement path, frequently asked
 | Documentation | [Azure update](https://azure.microsoft.com/updates/azure-front-door-classic-will-be-retired-on-31-march-2027/), [FAQ](classic-retirement-faq.md) | [Azure update](https://azure.microsoft.com/updates/v2/Azure-CDN-Standard-from-Microsoft-classic-will-be-retired-on-30-September-2027), [FAQ](../cdn/classic-cdn-retirement-faq.md) | [FAQ](/previous-versions/azure/cdn/akamai-retirement-faq?toc=/azure/frontdoor/toc.json)|[FAQ](/previous-versions/azure/cdn/edgio-retirement-faq?toc=/azure/frontdoor/toc.json) |
 | Migration | [Considerations](tier-migration.md), [Step-by-step instructions](migrate-tier.md) | [Considerations](../cdn/tier-migration.md), [Step-by-step instructions](../cdn/migrate-tier.md) | Service retired | Service retired |
 
+Complete and validate migration before the applicable retirement date: **March 31, 2027 for Azure Front Door (classic)** and **September 30, 2027 for Azure CDN Standard from Microsoft (classic)**.
+
+After each service's retirement date, Microsoft plans to automatically migrate its remaining eligible profiles to Azure Front Door Standard or Premium on a best-effort basis. Successful migration and uninterrupted service are not guaranteed. Customers remain responsible for completing and validating migration **prior to each retirement date.** Do not rely on automatic migration as your primary migration plan.
+
+Migrated workloads may incur different, potentially higher charges. Review the pricing comparison for [Azure Front Door (classic)](understanding-pricing.md) or [Azure CDN Standard from Microsoft (classic)](compare-cdn-front-door-price.md).
+
+For service-specific retirement details, see the [Azure Front Door (classic) retirement FAQ](classic-retirement-faq.md) and the [Azure CDN Standard from Microsoft (classic) retirement FAQ](../cdn/classic-cdn-retirement-faq.md).
+
 ## Related content
 
 - [Create an Azure Front Door](create-front-door-portal.md)
