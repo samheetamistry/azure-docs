@@ -8,6 +8,6 @@ ms.custom: include file
 ---
 
 > [!IMPORTANT]
-> Azure CDN Standard from Microsoft (classic) will be retired on **September 30, 2027**. To avoid any service disruption, it's important that you [**migrate your Azure CDN Standard from Microsoft (classic) profiles**](../articles/cdn/migrate-tier.md) to Azure Front Door Standard or Premium tier by September 30, 2027. For more information, see [**Azure CDN Standard from Microsoft (classic) retirement**](https://azure.microsoft.com/updates/v2/Azure-CDN-Standard-from-Microsoft-classic-will-be-retired-on-30-September-2027).
+> Azure CDN Standard from Microsoft (classic) retires on **September 30, 2027**. New profiles, new domain onboarding, and managed certificates are no longer supported. Complete your [migration to Azure Front Door Standard or Premium](https://learn.microsoft.com/en-us/azure/cdn/migrate-tier) **before retirement.** After retirement, Microsoft plans to automatically migrate remaining eligible profiles on a best-effort basis; successful migration and uninterrupted service are not guaranteed. **Do not rely on automatic migration as your primary migration plan.** For more information, see the [Azure CDN Standard from Microsoft (classic) retirement FAQ](https://learn.microsoft.com/en-us/azure/cdn/classic).
 >
 > Azure CDN from Edgio was retired on **January 15, 2025**. For more information, see [**Azure CDN from Edgio retirement FAQ**](/previous-versions/azure/cdn/edgio-retirement-faq?toc=/azure/frontdoor/TOC.json).
