@@ -52,6 +52,10 @@ The Azure Front Door Standard and Premium tier have the same Service Level Agree
 
 ### What will happen after September 30, 2027 when the service is retired?
 
+After retirement, Microsoft plans to automatically migrate remaining eligible Azure CDN Standard from Microsoft (classic) profiles to Azure Front Door Standard or Premium on a best-effort basis. Successful migration and uninterrupted service are not guaranteed. Customers remain responsible for completing and validating migration. Migrated workloads may incur different, potentially higher charges. Not migrating an existing classic profile will be construed as consent for Microsoft to migrate it on your behalf.
+
+Do not rely on automatic migration as your primary migration plan. Complete and validate [migration to Azure Front Door Standard or Premium](migrate-tier.md) before September 30, 2027.
+
 After the service is retired, you'll lose the ability to:
 * Create or manage Azure CDN Standard from Microsoft (classic) resources.
 * Access the data through the Azure portal or the APIs/SDKs/client tools.
