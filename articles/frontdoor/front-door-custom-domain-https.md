@@ -94,6 +94,9 @@ You can use your own certificate through an integration with Azure Key Vault. En
 
 #### Prepare your key vault and certificate
 
+> [!IMPORTANT]
+> Service principal (app registration) access to Azure Key Vault certificates ends when Azure Front Door (classic) retires on March 31, 2027. Azure Front Door Standard and Premium require a managed identity to access Key Vault certificates. Configure a managed identity when you [migrate to Azure Front Door Standard or Premium](../tier-migration.md).
+
 - Create a key vault account in the same Azure subscription as your Front Door.
 - Configure your key vault to allow trusted Microsoft services to bypass the firewall if network access restrictions are enabled.
 - Use the *Key Vault access policy* permission model.
