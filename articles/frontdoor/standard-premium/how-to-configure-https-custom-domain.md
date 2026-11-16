@@ -76,6 +76,11 @@ There are currently two ways to authenticate Azure Front Door to access your Key
 - **Managed identity**: Azure Front Door uses a managed identity to authenticate to your Key Vault. This method is recommended because it's more secure and doesn't require you to manage credentials. For more information, see [Use managed identities in Azure Front Door](../managed-identity.md). Skip to [Select the certificate for Azure Front Door to deploy](#select-the-certificate-for-azure-front-door-to-deploy) if you're using this method.
 - **App registration**: Azure Front Door uses an app registration to authenticate to your Key Vault. This method is being deprecated and will be retired in the future. For more information, see [Use app registration in Azure Front Door](#register-azure-front-door).
 
+> [!IMPORTANT]
+> - Starting in September 2026, adding a new certificate to an Azure Front Door Standard or Premium profile requires a managed identity on the profile. If the profile doesn't have a usable managed identity, the request fails with the error "No usable managed identity is available on the current AFD profile."
+> - The legacy app registration (service principal) method for Key Vault access is being retired. Existing certificates that use app registration continue to autorotate until **March 31, 2027**. After this date, certificate autorotation fails for profiles that don't have a managed identity with access to the key vault.
+> - To avoid certificate rotation failures, enable a managed identity on each profile and grant it access to your key vault before the retirement date.
+
 > [!WARNING]
 > - Azure Front Door currently only supports Key Vault in the same subscription. Selecting Key Vault under a different subscription results in a failure.
 > - Azure Front Door doesn't support certificates with elliptic curve cryptography algorithms. Also, your certificate must have a complete certificate chain with leaf and intermediate certificates. The root CA also must be part of the [Microsoft Trusted CA List](https://ccadb-public.secure.force.com/microsoft/IncludedCACertificateReportForMSFT).
@@ -184,6 +189,16 @@ You can change a domain between using an Azure Front Door-managed certificate an
    If you select **Bring Your Own Certificate (BYOC)**, follow the preceding steps to select a certificate.
 
 1. Select **Update** to change the associated certificate with a domain.
+
+#### Move existing certificates from app registration to managed identity
+
+If your profile currently uses app registration to access your key vault:
+
+1. Enable a managed identity and grant it access to your key vault as described in the previous section.
+1. In your Azure Front Door profile, go to **Secrets** under **Security**.
+1. Confirm that **Managed identity** appears in the **Access role** column for each certificate.
+
+No other changes to your domains or certificates are required.
 
 ## Related content
 
