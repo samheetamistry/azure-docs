@@ -15,7 +15,7 @@ ROBOTS: NOINDEX
 # Tutorial: Configure HTTPS on an Azure CDN custom domain
 
 [!INCLUDE [Azure CDN from Microsoft (classic) retirement notice](../../includes/cdn-classic-retirement.md)]
-
+> [!IMPORTANT]
 > Service principal (app registration) access to Azure Key Vault certificates ends when Azure CDN Standard from Microsoft (classic) retires on September 30, 2027. If you use your own certificate, configure a managed identity with access to your key vault. For more information, see [Use managed identities to access Azure Key Vault certificates](managed-identity.md).
 
 This tutorial shows how to enable the HTTPS protocol for a custom domain associated with an Azure CDN endpoint.
