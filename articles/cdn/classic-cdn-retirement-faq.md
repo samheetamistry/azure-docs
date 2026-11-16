@@ -81,6 +81,12 @@ Currently, Azure CDN Standard from Microsoft (classic) retirement affects the pu
 
 You can still update your existing Azure CDN Standard from Microsoft (classic) resources using the Azure portal, Terraform, and all command line tools until September 30, 2027. However, you won't be able to create new Azure CDN Standard from Microsoft (classic) resources starting October 1, 2025. We strongly recommend you migrate to Azure Front Door Standard or Premium tier as soon as possible. 
 
+### What happens to certificates that use a service principal to access Azure Key Vault?
+
+If you use your own certificate (BYOC), Azure CDN Standard from Microsoft (classic) accesses your key vault through either a managed identity or the legacy app registration (service principal). Service principal access ends when Azure CDN Standard from Microsoft (classic) retires on September 30, 2027.
+
+Azure Front Door Standard and Premium require a managed identity to access Key Vault certificates. As part of your migration, enable a managed identity and grant it access to your key vault. For more information, see [Use managed identities to access Azure Key Vault certificates](managed-identity.md).
+
 ### Can I roll back to Azure CDN Standard from Microsoft (classic) after migration?
 
 No, once migration is completed successfully, it can't be rolled back to classic. If you encounter any issues, you can raise a support ticket for assistance.
