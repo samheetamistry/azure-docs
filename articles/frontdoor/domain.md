@@ -156,8 +156,10 @@ Azure Front Door needs to access your key vault to read your certificate. You ne
 If your key vault has network access restrictions enabled, you must configure your key vault to allow trusted Microsoft services to bypass the firewall.
 
 There are two ways you can configure access control on your key vault:
+> [!IMPORTANT]
+> App registration (service principal) access to Azure Key Vault retires on September 30, 2027. New certificates already require a managed identity. If existing certificates on your profile use an app registration, enable a managed identity and grant it access to your key vault before September 30, 2027, to avoid certificate rotation failures.
 
-* **Recommended: **Azure Front Door can use a managed identity to access your key vault. You can use this approach when your key vault uses Microsoft Entra authentication. For more information, see [Use managed identities with Azure Front Door Standard/Premium](managed-identity.md).
+* **Recommended:** Azure Front Door can use a managed identity to access your key vault. You can use this approach when your key vault uses Microsoft Entra authentication. For more information, see [Use managed identities with Azure Front Door Standard/Premium](managed-identity.md).
 * Alternatively you can grant Azure Front Door's service principal access to your key vault. You can use this approach when you use vault access policies. **App registration (service principal) access to Azure Key Vault retires on September 30, 2027.**
 
 
