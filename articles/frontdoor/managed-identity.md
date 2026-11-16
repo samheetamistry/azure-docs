@@ -17,7 +17,7 @@ ms.custom:
 
 Managed identities provided by Microsoft Entra ID enable your Azure Front Door instance to securely access other Microsoft Entra protected resources, such as Azure Key Vault, without the need to manage credentials. For more information, see [What are managed identities for Azure resources?](../active-directory/managed-identities-azure-resources/overview.md)
 
-After you enable managed identity for Azure Front Door and granting the necessary permissions to your Azure Key Vault, Front Door will use the managed identity to access certificates. Without these permissions, custom certificate autorotation and adding new certificates fail. If managed identity is disabled, Azure Front Door reverts to the legacy app registration for existing certificates. New certificates can't be added without a managed identity. **The app registration method retires on March 31, 2027. After this date, certificate autorotation fails for profiles that don't have a managed identity with access to the key vault.**
+After you enable managed identity for Azure Front Door and granting the necessary permissions to your Azure Key Vault, Front Door will use the managed identity to access certificates. Without these permissions, custom certificate autorotation and adding new certificates fail. If managed identity is disabled, Azure Front Door reverts to the legacy app registration for existing certificates. New certificates can't be added without a managed identity. **App registration access to Azure Key Vault retires on September 30, 2027. Keep managed identity enabled to avoid certificate rotation failures after that date.**
 
 Azure Front Door supports two types of managed identities:
 
