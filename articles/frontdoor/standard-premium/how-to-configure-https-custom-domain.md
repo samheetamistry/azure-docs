@@ -134,6 +134,9 @@ Register the service principal for Azure Front Door as an app in your Microsoft 
 
 Grant Azure Front Door permission to access the certificates in the new Key Vault account that you created specifically for Azure Front Door. You only need to give `GET` permission to the certificate and secret in order for Azure Front Door to retrieve the certificate.
 
+> [!NOTE]
+> If your key vault is protected with network access restrictions, make sure to allow trusted Microsoft services to access your key vault.
+
 1. In your Key Vault account, select **Access policies**.
 
 1. Select **Add new** or **Create** to create a new access policy.
