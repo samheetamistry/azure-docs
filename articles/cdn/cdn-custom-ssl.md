@@ -16,6 +16,8 @@ ROBOTS: NOINDEX
 
 [!INCLUDE [Azure CDN from Microsoft (classic) retirement notice](../../includes/cdn-classic-retirement.md)]
 
+> Service principal (app registration) access to Azure Key Vault certificates ends when Azure CDN Standard from Microsoft (classic) retires on September 30, 2027. If you use your own certificate, configure a managed identity with access to your key vault. For more information, see [Use managed identities to access Azure Key Vault certificates](managed-identity.md).
+
 This tutorial shows how to enable the HTTPS protocol for a custom domain associated with an Azure CDN endpoint.
 
 The HTTPS protocol on your custom domain (for example, `https://www.contoso.com`), ensures your sensitive data is delivered securely via TLS/SSL. When your web browser is connected via HTTPS, the browser validates the web site's certificate. The browser verifies it's issued by a legitimate certificate authority. This process provides security and protects your web applications from attacks.
@@ -104,7 +106,10 @@ You can use your own certificate to enable the HTTPS feature. This process is do
 
 ### Set up managed identity for Azure CDN
 
-Follow the steps in [Configure managed identity for Azure CDN](managed-identity.md) to allow Azure CDN to access your Azure Key Vault account.
+Azure CDN uses a managed identity to access the certificates in your key vault. Follow the steps in [Configure managed identity for Azure CDN](managed-identity.md) to enable a managed identity on your profile and grant it access to your key vault.
+
+> [!IMPORTANT]
+> The legacy app registration (service principal) method for Key Vault access is being retired and ends when Azure CDN Standard from Microsoft (classic) retires on September 30, 2027. Azure Front Door Standard and Premium require a managed identity to access Key Vault certificates. If your profile still uses app registration, configure a managed identity now so your certificate access is ready for migration.
 
 ### Select the certificate for Azure CDN to deploy
 
