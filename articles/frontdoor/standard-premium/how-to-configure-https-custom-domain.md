@@ -78,7 +78,7 @@ There are currently two ways to authenticate Azure Front Door to access your Key
 
 > [!IMPORTANT]
 > - Starting in September 2026, adding a new certificate to an Azure Front Door Standard or Premium profile requires a managed identity on the profile. If the profile doesn't have a usable managed identity, the request fails with the error "No usable managed identity is available on the current AFD profile."
-> - The legacy app registration (service principal) method for Key Vault access is being retired. Existing certificates that use app registration continue to autorotate until **March 31, 2027**. After this date, certificate autorotation fails for profiles that don't have a managed identity with access to the key vault.
+> - App registration (service principal) access to Azure Key Vault retires on **September 30, 2027**. New certificates already require a managed identity. If existing certificates on your profile use an app registration, enable a managed identity and grant it access to your key vault before September 30, 2027, to avoid certificate rotation failures.
 > - To avoid certificate rotation failures, enable a managed identity on each profile and grant it access to your key vault before the retirement date.
 
 > [!WARNING]
