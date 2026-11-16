@@ -110,6 +110,9 @@ For your own custom TLS/SSL certificate:
 
     The service principal for Front Door must have access to the key vault. The updated certificate rollout operation by Azure Front Door won't cause any production downtime, as long as the subject name or subject alternate name (SAN) for the certificate hasn't changed.
 
+> [!IMPORTANT]
+> App registration (service principal) access to Azure Key Vault retires on September 30, 2027. New certificates already require a managed identity. If existing certificates on your profile use an app registration, enable a managed identity and grant it access to your key vault before September 30, 2027, to avoid certificate rotation failures.
+
 ## Supported cipher suites
 
 For TLS 1.2/1.3, the following cipher suites are supported:
